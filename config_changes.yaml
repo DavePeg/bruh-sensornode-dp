@@ -1,0 +1,31 @@
+Changes sensor to binary_sensor
+#sensor:
+#  - platform: mqtt
+#    state_topic: "bruh/sensornode1"
+#    name: "SN1 PIR"
+#    value_template: '{{ value_json.motion }}'
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "bruh/sensornode1"
+    name: "SN1 PIR"
+    value_template: '{{ value_json.motion }}'
+    payload_on: "motion detected"
+    payload_off: "standby"
+    device_class: motion
+
+Add the two lines starting with "effect" to the light
+	
+light:  
+  - platform: mqtt_json  
+    name: "SN1 LED"  
+    state_topic: "bruh/sensornode1"  
+    command_topic: "bruh/sensornode1/set"  
+    brightness: true  
+    flash: true  
+    rgb: true
+    effect: true
+    effect_list: [colorfade_slow, colorfade_fast, flash, none]
+    optimistic: false  
+    qos: 0
+    retain: true
