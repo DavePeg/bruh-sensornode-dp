@@ -1,7 +1,7 @@
 # bruh-sensornode-dp
 Enhancements to Bruh Automation's Sensor Node for Home Assistant on a ESP8266
 
-04 Feb 2018 by David Payne - Set LED pins to output to prevent dull blue glow on power up/reset
+04 Feb 2018 by DavePeg     - Set LED pins to output to prevent dull blue glow on power up/reset
                            - Allow modal colour and brightness fading from effects in HA
                            - add -     effect: true
                                        effect_list: [colorfade_slow, colorfade_fast, flash, none]
